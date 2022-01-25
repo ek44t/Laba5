@@ -1,0 +1,52 @@
+/* fig.:lab5.cpp *********************************/
+/*******************************************************/
+/* Filename:lab5.cpp *****************************/
+/* Abstract: Sample C++ - program **********************/
+/* Description: program does string-manipulations*******/
+/* Version:1 *****************************************/
+/* Creation Date: 02.01.2022 ***************************/
+/* Author: Ekaterina Komarova ***************************/
+/*******************************************************/
+
+
+
+#include <iostream> 
+#include <string> 
+
+using namespace std;
+
+void first_task()
+{
+	int m1, m2, n1, n2;
+	string str;
+	cin >> m1 >> m2 >> n1 >> n2;
+	cout << "String: ";
+	cin >> str;
+
+	if (m1 - m2 != n1 - n2)
+	{
+		cout << "m1 - m2 != n1 - n2";
+		return;
+	}
+	string sub1 = str.substr(n1, n2);
+	string sub2 = str.substr(m1, m2);
+
+	for (int i = n1, j = m1; i <= n2, j <= m2; i++, j++)
+	{
+		swap(str[i], str[j]);
+	}
+	std::cout << str;
+}
+
+int main()
+{
+	printf_s(
+		"***********************************************************\n\
+			*nizhniy novgorod technical university*\n\
+			* study work number 5. task number 1. *\n\
+			*performed student 21ivt-2 Komarova Ekaterina*\n\
+			***********************************************************\n"
+	);
+	first_task();
+	return 0;
+}
